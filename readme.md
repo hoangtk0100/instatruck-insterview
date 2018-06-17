@@ -13,6 +13,7 @@ The `instatest.py` file contains a class, a mock and some basic tests. The candi
 
 The aim is to understand your ability and pragmaticness of writing, testing and maintaining python code. The only rules in addition to the above are:
 
+ * Python3 should be used
  * executing `python -m instatest` should not fail.
  * any tests should be able to be run with a single command in the root repository folder.
 
