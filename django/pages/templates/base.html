@@ -1,0 +1,188 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>{% block title %}movieDB{% endblock %}</title>
+  </head>
+  <head>
+  <style>
+      body {
+          background: mintcream url("{% static 'images/PredictionPage/background.jpg' %}") ;
+          background-attachment: fixed;
+      }
+      th{
+          max-width: 120px;
+          text-align: center;
+      }
+      td{
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 100px;
+      }
+  </style>
+  </head>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f1f1f1;
+      padding: 20px;
+      font-family: Arial;
+    }
+
+    /* Center website */
+    .main {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 50px;
+      word-break: break-all;
+    }
+
+    .row {
+      margin: 10px -16px;
+    }
+
+    /* Add padding BETWEEN each column */
+    .row,
+    .row > .column {
+      padding: 8px;
+    }
+
+    /* Create 4 equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 25%;
+      display: none; /* Hide all elements by default */
+    }
+
+    /* Clear floats after rows */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Content */
+    .content {
+      background-color: white;
+      padding: 10px;
+    }
+
+    /* The "show" class is added to the filtered elements */
+    .show {
+      display: block;
+    }
+
+    /* Style the buttons */
+    .btn {
+      border: none;
+      outline: none;
+      padding: 12px 16px;
+      /*background-color: #4CAF50;*/
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #ddd;
+    }
+
+    .btn.active {
+      background-color: #666;
+      color: white;
+    }
+  </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fc; border:none">
+        <a class="navbar-brand" href="{% url 'home' %}">
+        <span class="navbar-brand">MovieDB</span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="nav nav-tabs mr-auto">
+                {% url 'home' as url_home %}
+                {% if request.get_full_path == url_home %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                {% else %}
+                         <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                {% endif %}
+                {% url 'movie' as url_movie %}
+                {% if request.get_full_path == url_movie %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'movie' %}">Movie</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'movie' %}">Movie</a>
+                    </li>
+                {% endif %}
+                {% url 'actor' as url_actor %}
+                {% if request.get_full_path == url_actor %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'actor' %}">Actor</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'actor' %}">Actor</a>
+                    </li>
+                {% endif %}
+                {% url 'director' as url_director %}
+                {% if request.get_full_path == url_director %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'director' %}">Director</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'director' %}">Director</a>
+                    </li>
+                {% endif %}
+                {% url 'recommendation' as url_recommendation %}
+                {% if request.get_full_path == url_recommendation %}
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'recommendation' %}">Visualization</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'recommendation' %}">Visualization</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </div>
+    </nav>
+    {% block content %}
+    {% endblock %}
+    <footer class="site-footer">
+        <div class="mx-auto" align="center">
+            <p class="font-weight-bold">Copyright &copy; CrazyPoorAsian - All Rights Reserved</p>
+            <img src="{% static 'images/UIUC.jpg' %}" style="width: 200px; height: auto">
+        </div>
+    </footer>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

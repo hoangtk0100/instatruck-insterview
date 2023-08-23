@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+<div class="main">
+    {% if filter_title %}
+    <br>
+    <br>
+        <style>
+            th{
+                max-width: 80px;
+                text-align: left;
+            }
+            td{
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                max-width: 100px;
+            }
+        </style>
+        <table class="table table-hover table-sm">
+            <thead class="thead-light" data-file-width="5px">
+            <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Director</th>
+                <th scope="col">Actor</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for movie in filter_title %}
+                <tr>
+                    <th scope="row"> {{ movie.title }}</th>
+                    <td> {{ movie.name }}</td>
+                    <td> {{ movie.star }}</td>
+                </tr>
+            {% endfor %}
+            {% for movie in filter_title %}
+                {% if movie.title %}
+                <figure class="figure">
+                  <img src="{% get_static_prefix %}images/poster/{{movie.title}}.jpg" class="figure-img img-fluid rounded" alt="MoviePoster" hspace="20">
+                  <figcaption class="figure-caption" style="text-align: center">{{movie.title}}</figcaption>
+                </figure>
+                {% endif %}
+            {% endfor %}
+            </tbody>
+        </table>
+            <h3>{{ filter_title.name }}</h3><br>
+    {% else %}
+{#        <div class="container" align="center">#}
+{#              <h3 style="color: red">Oops! It's new to us!</h3><br>#}
+{#              <h3 style="color: orange">Oops! It's new to us!</h3><br>#}
+{#              <h3 style="color: yellow">Oops! It's new to us!</h3><br>#}
+{#              <h3 style="color: green">Oops! It's new to us!</h3><br>#}
+{#              <a href="{% url 'insert_data' %}"><h3>Let's add a new one!</h3></a><br>#}
+{#              <h3 style="color: indigo">Oops! It's new to us!</h3><br>#}
+{#              <h3 style="color: purple">Oops! It's new to us!</h3><br>#}
+{##}
+{#        </div>#}
+    {% endif %}
+
+    <script type="text/javascript">
+        var mW = 400;
+        var mH = 400;
+        var new_rating = "{{new_rating}}";
+        var new_votes = "{{new_votes}}"
+        var new_d_award = "{{new_d_award}}"
+        var new_a_award = "{{new_a_award}}"
+        var new_metascore = "{{new_metascore}}"
+        var new_gross = "{{new_gross}}"
+        var mData = [['Rating', new_rating],
+                                ['Votes', new_votes ],
+                                ['Metoscore', new_metascore],
+                                ['Gross', new_gross],
+                                ['Director Awards', new_d_award ],
+                                ['Actor awards', new_a_award ]];
+        var mCount = mData.length; //number of sides
+        var mCenter = mW /2; //center
+        var mRadius = mCenter - 50; //radius
+        var mAngle = Math.PI * 2 / mCount; //angle
+        var mCtx = null;
+        var mColorPolygon = '#B8B8B8'; //color of polygon
+        var mColorLines = '#B8B8B8'; // color of lined
+        var mColorText = '#000000';
+
+        //initial set
+        (function(){
+          var canvas = document.createElement('canvas');
+          document.body.appendChild(canvas);
+          canvas.height = mH;
+          canvas.width = mW;
+          mCtx = canvas.getContext('2d');
+
+          drawPolygon(mCtx);
+          drawLines(mCtx);
+          drawText(mCtx);
+          drawRegion(mCtx);
+          drawCircle(mCtx);
+        })();
+
+          // plot ploygon
+          function drawPolygon(ctx){
+            ctx.save();
+
+            ctx.strokeStyle = mColorPolygon;
+            var r = mRadius/ mCount; //unit radiu
+            //画6个圈
+            for(var i = 0; i < mCount; i ++){
+                ctx.beginPath();
+                var currR = r * ( i + 1); //current radiu
+                //画6条边
+                for(var j = 0; j < mCount; j ++){
+                    var x = mCenter + currR * Math.cos(mAngle * j);
+                    var y = mCenter + currR * Math.sin(mAngle * j);
+
+                    ctx.lineTo(x, y);
+                }
+                ctx.closePath()
+                ctx.stroke();
+            }
+
+            ctx.restore();
+          }
+
+        //Draw lines
+        function drawLines(ctx){
+            ctx.save();
+
+            ctx.beginPath();
+            ctx.strokeStyle = mColorLines;
+
+            for(var i = 0; i < mCount; i ++){
+                var x = mCenter + mRadius * Math.cos(mAngle * i);
+                var y = mCenter + mRadius * Math.sin(mAngle * i);
+
+                ctx.moveTo(mCenter, mCenter);
+                ctx.lineTo(x, y);
+            }
+
+            ctx.stroke();
+
+            ctx.restore();
+        }
+
+        //Draw text
+        function drawText(ctx){
+            ctx.save();
+
+            var fontSize = mCenter / 12;
+            ctx.font = fontSize + 'px Microsoft Yahei';
+            ctx.fillStyle = mColorText;
+
+            for(var i = 0; i < mCount; i ++){
+                var x = mCenter + mRadius * Math.cos(mAngle * i);
+                var y = mCenter + mRadius * Math.sin(mAngle * i);
+
+                if( mAngle * i >= 0 && mAngle * i <= Math.PI / 2 ){
+                    ctx.fillText(mData[i][0], x, y + fontSize);
+                }else if(mAngle * i > Math.PI / 2 && mAngle * i <= Math.PI){
+                    ctx.fillText(mData[i][0], x - ctx.measureText(mData[i][0]).width, y + fontSize);
+                }else if(mAngle * i > Math.PI && mAngle * i <= Math.PI * 3 / 2){
+                    ctx.fillText(mData[i][0], x - ctx.measureText(mData[i][0]).width, y);
+                }else{
+                    ctx.fillText(mData[i][0], x, y);
+                }
+
+            }
+
+            ctx.restore();
+        }
+
+        //draw region
+        function drawRegion(ctx){
+            ctx.save();
+
+            ctx.beginPath();
+            for(var i = 0; i < mCount; i ++){
+                var x = mCenter + mRadius * Math.cos(mAngle * i) * mData[i][1] / 100;
+                var y = mCenter + mRadius * Math.sin(mAngle * i) * mData[i][1] / 100;
+
+                ctx.lineTo(x, y);
+            }
+            ctx.closePath();
+            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
+            ctx.fill();
+
+            ctx.restore();
+        }
+
+        //draw points
+        function drawCircle(ctx){
+            ctx.save();
+
+            var r = mCenter / 100;
+            for(var i = 0; i < mCount; i ++){
+                var x = mCenter + mRadius * Math.cos(mAngle * i) * mData[i][1] / 100;
+                var y = mCenter + mRadius * Math.sin(mAngle * i) * mData[i][1] / 100;
+
+                ctx.beginPath();
+                ctx.arc(x, y, r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(255, 0, 0, 0.8)';
+                ctx.fill();
+            }
+
+            ctx.restore();
+        }
+
+    </script>
+</div>
+{% endblock %}
