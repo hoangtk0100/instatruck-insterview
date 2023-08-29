@@ -1,7 +1,7 @@
 import functools
 from .base import BaseResponse
 from .exceptions import BaseException, InvalidArgumentException
-from .messages import CONTACT_ADMIN_FOR_SUPPORT, INVALID_ARGUMENT, FIELD_NOT_SUPPORT, NEGATIVE_PAGE_SIZE
+from .messages import CONTACT_ADMIN_FOR_SUPPORT, INVALID_ARGUMENT, FIELD_NOT_SUPPORT, NEGATIVE_PAGE_SIZE, SORT_TYPE_NOT_SUPPORT
 from django.core.exceptions import ValidationError, FieldError
 from django.core.paginator import Paginator
 import logging
@@ -93,3 +93,14 @@ def paginate_data(request, data):
         "total_pages": total_pages,
         "content": content,
     }
+
+def get_sort_type(sort_type):
+    '''
+    # Get sort type for queryset
+    '''
+    if sort_type.casefold() == 'asc':
+        return ''
+    elif sort_type.casefold() == 'desc' or not sort_type:
+        return '-'  
+    else:
+        raise InvalidArgumentException(SORT_TYPE_NOT_SUPPORT)
