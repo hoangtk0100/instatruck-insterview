@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "8f80a92e-cb68-497d-a1b5-65e219651479",
+		"name": "instatest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5930280"
+	},
+	"item": [
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/movies?page=1&limit=10&start_year=2000",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"movies"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "start_year",
+									"value": "2000"
+								},
+								{
+									"key": "end_year",
+									"value": "2007",
+									"disabled": true
+								},
+								{
+									"key": "actor_id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "actor_name",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "director_id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "director_name",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "best filter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/movies/best/:amount?page=2&start_year=2000&end_year=2007&sort_by=year&sort_type=asc",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"movies",
+								"best",
+								":amount"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "start_year",
+									"value": "2000"
+								},
+								{
+									"key": "end_year",
+									"value": "2007"
+								},
+								{
+									"key": "actor_id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "actor_name",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "director_id",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "director_name",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort_by",
+									"value": "year"
+								},
+								{
+									"key": "sort_type",
+									"value": "asc"
+								}
+							],
+							"variable": [
+								{
+									"key": "amount",
+									"value": "5"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List by actors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/actors/:id/films",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"actors",
+								":id",
+								"films"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List by directors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/directors/:id/films",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"directors",
+								":id",
+								"films"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Actor",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/actors",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"actors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/actors/birthdays/:date",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"actors",
+								"birthdays",
+								":date"
+							],
+							"variable": [
+								{
+									"key": "date",
+									"value": "30051997"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Diretor",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/directors",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"directors"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
