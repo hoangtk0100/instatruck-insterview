@@ -10,7 +10,6 @@ import configparser
 from multiprocessing import Lock
 from constant import *
 
-import boto3
 import dateutil.parser as dateparser
 from boto3 import Session
 
@@ -106,7 +105,11 @@ class Wrapper(object):
 
         Wrapper._save_session_to_disk_cache(data)
 
-        return Wrapper._get_user_session_from_disk_cache(environment)
+        expiration = dateparser.parse(data[EXPIRATION_KEY])
+        if expiration <= datetime.now(expiration.tzinfo):
+            return None
+
+        return Wrapper._get_aws_session(environment, data)
 
     @staticmethod
     def _get_session_for_assumed_role(environment, session, role=None):
@@ -264,7 +267,7 @@ class Wrapper(object):
 
     @staticmethod
     def _get_aws_session(environment, data):
-        return boto3.Session(
+        return Session(
             aws_access_key_id=data[ACCESS_KEY_ID_KEY],
             aws_secret_access_key=data[SECRET_ACCESS_KEY_KEY],
             aws_session_token=data[SESSION_TOKEN_KEY],
