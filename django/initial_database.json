@@ -327,8 +327,8 @@
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$260000$jwBMARUqVM8WXq1WqpU4zy$tptjGoTCVijpchEfOaXXt6AkdoFnxzMdGGgUF8Neock=",
-    "last_login": "2023-08-29T14:19:12.055Z",
+    "password": "pbkdf2_sha256$260000$cTTuw7MXGUyHRNf8IZ8KKr$6uyvySy5ZDPxI7vtslDFsnqca/a45NqEt9pCp+316BE=",
+    "last_login": null,
     "is_superuser": true,
     "username": "admin@mail.com",
     "first_name": "",
@@ -336,7 +336,7 @@
     "email": "admin@mail.com",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2023-08-29T13:13:12.373Z",
+    "date_joined": "2023-08-29T19:59:50.811Z",
     "groups": [],
     "user_permissions": []
   }
@@ -414,23 +414,15 @@
   }
 },
 {
-  "model": "sessions.session",
-  "pk": "3wyn2vkk8tlbsxxz4isi9mheg80qiqvk",
-  "fields": {
-    "session_data": ".eJxVjMsOwiAQRf-FtSHAAAMu3fsNhOEhVUOT0q6M_65NutDtPefcFwtxW1vYRlnClNmZSXb63SimR-k7yPfYbzNPc1-Xifiu8IMOfp1zeV4O9--gxdG-dYKKxWcSFgW5mL0tynvSzpgUEbQ0gA6rrrZo8BWkVBmF81o5SiCAvT_aPjb-:1qazYm:p5DBbEmsMiEanXaeEsZ6i4CDuenHHaoJPKkx63xcrO8",
-    "expire_date": "2023-09-12T14:19:12.058Z"
-  }
-},
-{
   "model": "pages.director",
   "pk": 1,
   "fields": {
     "name": "Director 1",
-    "date": "Some Date",
+    "date": "22031916",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 4,
-    "award_nom": 7,
+    "award_win": 8,
+    "award_nom": 9,
     "person_link": "https://person-1.com",
     "award_link": "https://award-1.com"
   }
@@ -440,11 +432,11 @@
   "pk": 2,
   "fields": {
     "name": "Director 2",
-    "date": "Some Date",
+    "date": "11092006",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 1,
-    "award_nom": 8,
+    "award_win": 7,
+    "award_nom": 4,
     "person_link": "https://person-2.com",
     "award_link": "https://award-2.com"
   }
@@ -454,11 +446,11 @@
   "pk": 3,
   "fields": {
     "name": "Director 3",
-    "date": "Some Date",
+    "date": "08071915",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 8,
-    "award_nom": 3,
+    "award_win": 7,
+    "award_nom": 7,
     "person_link": "https://person-3.com",
     "award_link": "https://award-3.com"
   }
@@ -468,11 +460,11 @@
   "pk": 4,
   "fields": {
     "name": "Director 4",
-    "date": "Some Date",
+    "date": "10051933",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 1,
-    "award_nom": 1,
+    "award_win": 10,
+    "award_nom": 8,
     "person_link": "https://person-4.com",
     "award_link": "https://award-4.com"
   }
@@ -482,11 +474,11 @@
   "pk": 5,
   "fields": {
     "name": "Director 5",
-    "date": "Some Date",
+    "date": "06071903",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 10,
-    "award_nom": 0,
+    "award_win": 8,
+    "award_nom": 3,
     "person_link": "https://person-5.com",
     "award_link": "https://award-5.com"
   }
@@ -496,11 +488,11 @@
   "pk": 6,
   "fields": {
     "name": "Director 6",
-    "date": "Some Date",
+    "date": "30091926",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 8,
-    "award_nom": 5,
+    "award_win": 10,
+    "award_nom": 10,
     "person_link": "https://person-6.com",
     "award_link": "https://award-6.com"
   }
@@ -510,11 +502,11 @@
   "pk": 7,
   "fields": {
     "name": "Director 7",
-    "date": "Some Date",
+    "date": "18121959",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 2,
-    "award_nom": 5,
+    "award_win": 8,
+    "award_nom": 1,
     "person_link": "https://person-7.com",
     "award_link": "https://award-7.com"
   }
@@ -524,11 +516,11 @@
   "pk": 8,
   "fields": {
     "name": "Director 8",
-    "date": "Some Date",
+    "date": "28021916",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 6,
-    "award_nom": 5,
+    "award_win": 10,
+    "award_nom": 1,
     "person_link": "https://person-8.com",
     "award_link": "https://award-8.com"
   }
@@ -538,11 +530,11 @@
   "pk": 9,
   "fields": {
     "name": "Director 9",
-    "date": "Some Date",
+    "date": "07041944",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
     "award_win": 4,
-    "award_nom": 9,
+    "award_nom": 8,
     "person_link": "https://person-9.com",
     "award_link": "https://award-9.com"
   }
@@ -552,11 +544,11 @@
   "pk": 10,
   "fields": {
     "name": "Director 10",
-    "date": "Some Date",
+    "date": "26111932",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 7,
-    "award_nom": 7,
+    "award_win": 3,
+    "award_nom": 3,
     "person_link": "https://person-10.com",
     "award_link": "https://award-10.com"
   }
@@ -566,11 +558,11 @@
   "pk": 1,
   "fields": {
     "name": "Actor 1",
-    "date": "Some Date",
+    "date": "25122009",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 4,
-    "award_nom": 3,
+    "award_win": 2,
+    "award_nom": 1,
     "person_link": "https://person-1.com",
     "award_link": "https://award-1.com"
   }
@@ -580,11 +572,11 @@
   "pk": 2,
   "fields": {
     "name": "Actor 2",
-    "date": "Some Date",
+    "date": "01061919",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 4,
-    "award_nom": 1,
+    "award_win": 10,
+    "award_nom": 4,
     "person_link": "https://person-2.com",
     "award_link": "https://award-2.com"
   }
@@ -594,11 +586,11 @@
   "pk": 3,
   "fields": {
     "name": "Actor 3",
-    "date": "Some Date",
+    "date": "12101925",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 2,
-    "award_nom": 4,
+    "award_win": 1,
+    "award_nom": 5,
     "person_link": "https://person-3.com",
     "award_link": "https://award-3.com"
   }
@@ -608,10 +600,10 @@
   "pk": 4,
   "fields": {
     "name": "Actor 4",
-    "date": "Some Date",
+    "date": "13051982",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 8,
+    "award_win": 3,
     "award_nom": 1,
     "person_link": "https://person-4.com",
     "award_link": "https://award-4.com"
@@ -622,11 +614,11 @@
   "pk": 5,
   "fields": {
     "name": "Actor 5",
-    "date": "Some Date",
+    "date": "31071960",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 8,
-    "award_nom": 8,
+    "award_win": 6,
+    "award_nom": 1,
     "person_link": "https://person-5.com",
     "award_link": "https://award-5.com"
   }
@@ -636,11 +628,11 @@
   "pk": 6,
   "fields": {
     "name": "Actor 6",
-    "date": "Some Date",
+    "date": "14021999",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 3,
-    "award_nom": 9,
+    "award_win": 8,
+    "award_nom": 3,
     "person_link": "https://person-6.com",
     "award_link": "https://award-6.com"
   }
@@ -650,11 +642,11 @@
   "pk": 7,
   "fields": {
     "name": "Actor 7",
-    "date": "Some Date",
+    "date": "16081980",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 10,
-    "award_nom": 3,
+    "award_win": 6,
+    "award_nom": 2,
     "person_link": "https://person-7.com",
     "award_link": "https://award-7.com"
   }
@@ -664,11 +656,11 @@
   "pk": 8,
   "fields": {
     "name": "Actor 8",
-    "date": "Some Date",
+    "date": "26052020",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 6,
-    "award_nom": 8,
+    "award_win": 0,
+    "award_nom": 5,
     "person_link": "https://person-8.com",
     "award_link": "https://award-8.com"
   }
@@ -678,11 +670,11 @@
   "pk": 9,
   "fields": {
     "name": "Actor 9",
-    "date": "Some Date",
+    "date": "01051975",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 3,
-    "award_nom": 7,
+    "award_win": 4,
+    "award_nom": 6,
     "person_link": "https://person-9.com",
     "award_link": "https://award-9.com"
   }
@@ -692,11 +684,11 @@
   "pk": 10,
   "fields": {
     "name": "Actor 10",
-    "date": "Some Date",
+    "date": "30041997",
     "place": "Some Place",
     "masterpiece": "Some Masterpiece",
-    "award_win": 4,
-    "award_nom": 4,
+    "award_win": 7,
+    "award_nom": 10,
     "person_link": "https://person-10.com",
     "award_link": "https://award-10.com"
   }
@@ -709,11 +701,11 @@
     "rank": 1,
     "title": "Movie 1",
     "description": "Description for Movie 1",
-    "duration": 161,
+    "duration": 105,
     "genres": "Action, Drama",
     "rating": 7.6,
     "metascore": 71,
-    "votes": 4002,
+    "votes": 3663,
     "gross_earning_in_mil": 11.0,
     "director": 1,
     "actor": 1
@@ -727,11 +719,11 @@
     "rank": 2,
     "title": "Movie 2",
     "description": "Description for Movie 2",
-    "duration": 151,
+    "duration": 97,
     "genres": "Action, Drama",
     "rating": 7.7,
     "metascore": 72,
-    "votes": 5595,
+    "votes": 6789,
     "gross_earning_in_mil": 12.0,
     "director": 2,
     "actor": 2
@@ -745,11 +737,11 @@
     "rank": 3,
     "title": "Movie 3",
     "description": "Description for Movie 3",
-    "duration": 128,
+    "duration": 94,
     "genres": "Action, Drama",
     "rating": 7.8,
     "metascore": 73,
-    "votes": 7095,
+    "votes": 9402,
     "gross_earning_in_mil": 13.0,
     "director": 3,
     "actor": 3
@@ -763,11 +755,11 @@
     "rank": 4,
     "title": "Movie 4",
     "description": "Description for Movie 4",
-    "duration": 122,
+    "duration": 151,
     "genres": "Action, Drama",
     "rating": 7.9,
     "metascore": 74,
-    "votes": 3775,
+    "votes": 2476,
     "gross_earning_in_mil": 14.0,
     "director": 4,
     "actor": 4
@@ -781,11 +773,11 @@
     "rank": 5,
     "title": "Movie 5",
     "description": "Description for Movie 5",
-    "duration": 101,
+    "duration": 103,
     "genres": "Action, Drama",
     "rating": 8.0,
     "metascore": 75,
-    "votes": 8679,
+    "votes": 7790,
     "gross_earning_in_mil": 15.0,
     "director": 5,
     "actor": 5
@@ -799,11 +791,11 @@
     "rank": 6,
     "title": "Movie 6",
     "description": "Description for Movie 6",
-    "duration": 162,
+    "duration": 103,
     "genres": "Action, Drama",
     "rating": 8.1,
     "metascore": 76,
-    "votes": 4698,
+    "votes": 8943,
     "gross_earning_in_mil": 16.0,
     "director": 6,
     "actor": 6
@@ -817,11 +809,11 @@
     "rank": 7,
     "title": "Movie 7",
     "description": "Description for Movie 7",
-    "duration": 112,
+    "duration": 154,
     "genres": "Action, Drama",
     "rating": 8.2,
     "metascore": 77,
-    "votes": 3048,
+    "votes": 4582,
     "gross_earning_in_mil": 17.0,
     "director": 7,
     "actor": 7
@@ -835,11 +827,11 @@
     "rank": 8,
     "title": "Movie 8",
     "description": "Description for Movie 8",
-    "duration": 108,
+    "duration": 109,
     "genres": "Action, Drama",
     "rating": 8.3,
     "metascore": 78,
-    "votes": 9613,
+    "votes": 6350,
     "gross_earning_in_mil": 18.0,
     "director": 8,
     "actor": 8
@@ -853,11 +845,11 @@
     "rank": 9,
     "title": "Movie 9",
     "description": "Description for Movie 9",
-    "duration": 136,
+    "duration": 162,
     "genres": "Action, Drama",
     "rating": 8.4,
     "metascore": 79,
-    "votes": 5611,
+    "votes": 9307,
     "gross_earning_in_mil": 19.0,
     "director": 9,
     "actor": 9
@@ -871,11 +863,11 @@
     "rank": 10,
     "title": "Movie 10",
     "description": "Description for Movie 10",
-    "duration": 129,
+    "duration": 132,
     "genres": "Action, Drama",
     "rating": 8.5,
     "metascore": 80,
-    "votes": 8360,
+    "votes": 4720,
     "gross_earning_in_mil": 20.0,
     "director": 10,
     "actor": 10

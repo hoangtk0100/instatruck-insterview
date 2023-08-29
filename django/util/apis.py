@@ -4,6 +4,9 @@ from .exceptions import BaseException, InvalidArgumentException
 from .messages import CONTACT_ADMIN_FOR_SUPPORT, INVALID_ARGUMENT, FIELD_NOT_SUPPORT, NEGATIVE_PAGE_SIZE, SORT_TYPE_NOT_SUPPORT
 from django.core.exceptions import ValidationError, FieldError
 from django.core.paginator import Paginator
+from .constants import YYYY_MM_DD, DDMMYYY
+from datetime import datetime, date
+from pytz import utc
 import logging
 LOGGER = logging.getLogger(__name__)
 
@@ -104,3 +107,14 @@ def get_sort_type(sort_type):
         return '-'  
     else:
         raise InvalidArgumentException(SORT_TYPE_NOT_SUPPORT)
+
+def convert_string_to_date(date_string, format = YYYY_MM_DD):
+    try:
+        if isinstance(date_string, datetime) or isinstance(date_string, date) or (type(date_string) is datetime.timestamp):
+            return date_string
+        return datetime.strptime(date_string, format).replace(tzinfo=utc)
+    except Exception as exception:
+        return None
+    
+def short_convert_string_to_date(date_string, format = DDMMYYY):
+    return datetime.strptime(date_string, format)

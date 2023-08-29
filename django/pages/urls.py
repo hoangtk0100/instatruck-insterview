@@ -1,11 +1,12 @@
 
 from django.urls import path
 from . import apis
-from .views import MovieView
+from .views import MovieView, ActorView
 
 from rest_framework import routers
 router = routers.DefaultRouter(trailing_slash=False)
 router.register('', MovieView, basename='')
+router.register('', ActorView, basename='')
 urlpatterns = router.urls
 
 urlpatterns.extend([
