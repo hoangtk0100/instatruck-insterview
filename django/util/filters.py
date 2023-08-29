@@ -1,11 +1,11 @@
 from .messages import START_YEAR_INVALID, END_YEAR_INVALID, END_YEAR_LESS_THAN_START_YEAR
+from django_filters.rest_framework import FilterSet
 from .exceptions import ValidationException
-from django_filters import rest_framework as filters
-import django_filters
+from django_filters import NumberFilter
 
-class YearRangeFilter(filters.FilterSet):
-    start_year = django_filters.NumberFilter(method='year_range_filter') 
-    end_year = django_filters.NumberFilter(method='year_range_filter')
+class YearRangeFilter(FilterSet):
+    start_year = NumberFilter(method='year_range_filter') 
+    end_year = NumberFilter(method='year_range_filter')
 
     def __init__(self, data=None, *args, **kwargs):
         if data is not None:
@@ -37,9 +37,9 @@ class YearRangeFilter(filters.FilterSet):
 
             return queryset.filter(year__lte=value)
 
-class YearRangeParamsFilter(filters.FilterSet):
-    start_year = django_filters.NumberFilter(method='year_range_filter') 
-    end_year = django_filters.NumberFilter(method='year_range_filter')
+class YearRangeParamsFilter(FilterSet):
+    start_year = NumberFilter(method='year_range_filter') 
+    end_year = NumberFilter(method='year_range_filter')
 
     def __init__(self, data=None, *args, **kwargs):
         if data is not None:

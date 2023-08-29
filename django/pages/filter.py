@@ -1,10 +1,12 @@
-from util.filters import YearRangeParamsFilter
+from django.db.models import Q, F, ExpressionWrapper, IntegerField
+from util.apis import get_sort_type, convert_string_to_date
+from util.filters import YearRangeParamsFilter, FilterSet
+from django_filters import NumberFilter, CharFilter
 from util.exceptions import ValidationException
 from util.messages import SORT_TYPE_NOT_SUPPORT
-from util.apis import get_sort_type
-from django.db.models import Q
-from .models import Movie
-import django_filters
+from django.db.models.functions import Abs
+from util.constants import DDMMYYY
+from .models import Movie, Actor
 
 class MovieFilter(YearRangeParamsFilter):
     class Meta:
@@ -12,11 +14,11 @@ class MovieFilter(YearRangeParamsFilter):
         ordering = ['name']
         fields = '__all__'
 
-    actor_id = django_filters.NumberFilter(method='actor_filter')
-    actor_name = django_filters.CharFilter(method='actor_filter')
+    actor_id = NumberFilter(method='actor_filter')
+    actor_name = CharFilter(method='actor_filter')
 
-    director_id = django_filters.NumberFilter(method='director_filter')
-    director_name = django_filters.CharFilter(method='director_filter')
+    director_id = NumberFilter(method='director_filter')
+    director_name = CharFilter(method='director_filter')
 
     def actor_filter(self, queryset, name, value):
         '''
@@ -57,13 +59,13 @@ class BestMovieFilter(YearRangeParamsFilter):
         ordering = ['-rating', '-metascore']
         fields = '__all__'
 
-    sort_by = django_filters.CharFilter(method='sort_by_filter') 
+    sort_by = CharFilter(method='sort_by_filter') 
 
-    actor_id = django_filters.NumberFilter(method='actor_filter')
-    actor_name = django_filters.CharFilter(method='actor_filter')
+    actor_id = NumberFilter(method='actor_filter')
+    actor_name = CharFilter(method='actor_filter')
 
-    director_id = django_filters.NumberFilter(method='director_filter')
-    director_name = django_filters.CharFilter(method='director_filter')
+    director_id = NumberFilter(method='director_filter')
+    director_name = CharFilter(method='director_filter')
 
     def sort_by_filter(self, queryset, name, value):
         '''
@@ -116,3 +118,40 @@ class BestMovieFilter(YearRangeParamsFilter):
         return queryset.filter(**{
             name + '__icontains': value
         })
+
+
+class ActorFilter(FilterSet):
+    class Meta:
+        model = Actor
+        fields = '__all__'
+
+    search = CharFilter(method='search_filter')
+
+    def search_filter(self, queryset, name, value):
+        '''
+        # Filter word in char (icontains)
+        @name: default - 'search'
+        @value: received from the request
+        '''
+        if value:        
+            target_date = convert_string_to_date(value, DDMMYYY)
+            if target_date:
+                nearest_birthdays = queryset.annotate(
+                    days_difference=ExpressionWrapper(
+                        Abs(F('date') - target_date),
+                        output_field=IntegerField(),
+                    )
+                ).order_by('days_difference')[:self.data.get('limit', 100)]
+
+                nearest_ids = [actor.id for actor in nearest_birthdays]
+
+                if nearest_ids:
+                    queryset = queryset.filter(id__in=nearest_ids)
+
+        else:
+            queryset = queryset.filter(
+                Q(name__icontains=value) |
+                Q(place__icontains=value)
+            )
+
+        return queryset

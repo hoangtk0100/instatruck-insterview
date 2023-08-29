@@ -1,6 +1,8 @@
 from django.core.management.base import BaseCommand
 from random import randint
 from django.db import connection
+from datetime import datetime, timedelta
+from util.constants import DDMMYYY
 
 class Command(BaseCommand):
     help = 'Initialize sample data for Directors, Actors, and Movies'
@@ -14,6 +16,12 @@ class Command(BaseCommand):
             self.insert_actors(cursor)
             self.insert_movies(cursor)
 
+    def random_date(self):
+        start_date = datetime(1900, 1, 1)
+        end_date = datetime.now()
+        random_date = start_date + timedelta(days=randint(0, (end_date - start_date).days))
+        formatted_date = random_date.strftime(DDMMYYY)
+        return formatted_date
 
     def insert_directors(self, cursor):
         # Create 10 Director records
@@ -22,7 +30,7 @@ class Command(BaseCommand):
             director = {
                 'id': i,
                 'name': f'Director {i}',
-                'date': 'Some Date',
+                'date': self.random_date(),
                 'place': 'Some Place',
                 'masterpiece': 'Some Masterpiece',
                 'award_win': randint(0, 10),
@@ -50,7 +58,7 @@ class Command(BaseCommand):
             actor = {
                 'id': i,
                 'name': f'Actor {i}',
-                'date': 'Some Date',
+                'date': self.random_date(),
                 'place': 'Some Place',
                 'masterpiece': 'Some Masterpiece',
                 'award_win': randint(0, 10),
