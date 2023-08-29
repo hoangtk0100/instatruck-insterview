@@ -1,19 +1,9 @@
 from .repository import MovieRepo, ActorRepo, DirectorRepo
 from rest_framework.decorators import api_view
-from .util.utils import catch_exceptions
-from .util.base import BaseResponse
-from .util.exceptions import InvalidArgumentException
-from .util.messages import NEGATIVE_ID
-
-@api_view(['GET'])
-@catch_exceptions
-def list_movies(request):
-    '''
-    # List all movies
-    '''
-    movies = MovieRepo.list()
-    data = list(map(lambda item: item.to_dict(), movies))
-    return BaseResponse(data=data)
+from util.apis import catch_exceptions
+from util.base import BaseResponse
+from util.exceptions import InvalidArgumentException
+from util.messages import NEGATIVE_ID
 
 @api_view(['GET'])
 @catch_exceptions

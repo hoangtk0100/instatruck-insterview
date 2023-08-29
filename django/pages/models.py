@@ -58,9 +58,11 @@ class Movie(models.Model):
 
     def to_dict(self):
         return {
-        'id': self.id,
-        'title': self.title,
-        'year': self.year,
-        'description': self.description,
-        'rating': self.rating,
-    }
+            'id': self.id,
+            'title': self.title,
+            'year': self.year,
+            'description': self.description,
+            'rating': self.rating,
+            'director': self.director.to_dict(),
+            'actor': self.actor.to_dict(),
+        }
