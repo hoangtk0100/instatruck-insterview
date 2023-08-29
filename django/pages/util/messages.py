@@ -1,0 +1,5 @@
+SUCCESS = 'Success'
+CONTACT_ADMIN_FOR_SUPPORT = 'Contact admin for support'
+ACTOR_NOT_FOUND = 'Actor not found'
+DIRECTOR_NOT_FOUND = 'Director not found'
+NEGATIVE_ID = 'Negative ID'
