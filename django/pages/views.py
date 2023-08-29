@@ -12,8 +12,7 @@ class MovieView(BaseView):
         'filter': MovieSerializer,
     }
 
-    # Use POST method for complex query, refer than GET with params
-    @action(methods=['POST'], detail=False, url_path='movies')
+    @action(methods=['GET'], detail=False, url_path='movies')
     @catch_exceptions
     def filter(self, request):
         '''
@@ -32,7 +31,7 @@ class MovieView(BaseView):
 
         '''
         queryset = Movie.objects.all()
-        queryset = MovieFilter(request.data, queryset=queryset).qs
+        queryset = MovieFilter(request.GET, queryset=queryset).qs
 
         data = list(map(lambda item: item.to_dict(), queryset))
         return BaseResponse(data=paginate_data(request, data))

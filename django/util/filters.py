@@ -37,3 +37,37 @@ class YearRangeFilter(filters.FilterSet):
 
             return queryset.filter(year__lte=value)
 
+class YearRangeParamsFilter(filters.FilterSet):
+    start_year = django_filters.NumberFilter(method='year_range_filter') 
+    end_year = django_filters.NumberFilter(method='year_range_filter')
+
+    def __init__(self, data=None, *args, **kwargs):
+        if data is not None:
+            data = data.copy()
+            if data.get('start_year'):
+                if int(data.get('start_year')) < 1900:
+                    raise ValidationException(START_YEAR_INVALID)
+            
+            if data.get('end_year'):
+                if int(data.get('end_year')) < 1900:
+                    raise ValidationException(END_YEAR_INVALID)
+
+        super().__init__(data, *args, **kwargs)
+
+    def year_range_filter(self, queryset, name, value):
+        '''
+        # Filter by date range
+        @name: default - [start_year, end_year]
+        @value: received from the request - format(YYYY-MM-DD)
+        '''
+        if (name == 'start_year') and value:
+            return queryset.filter(year__gte=int(value))
+
+        if (name == 'end_year') and value:
+            value = int(value)
+            start_year = self.data.get('start_year') or None
+            if start_year and int(start_year) > value:
+                raise ValidationException(END_YEAR_LESS_THAN_START_YEAR)
+
+            return queryset.filter(year__lte=value)
+

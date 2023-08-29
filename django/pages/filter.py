@@ -1,9 +1,9 @@
-from util.filters import YearRangeFilter
+from util.filters import YearRangeParamsFilter
 from django.db.models import Q
 from .models import Movie
 import django_filters
 
-class MovieFilter(YearRangeFilter):
+class MovieFilter(YearRangeParamsFilter):
     class Meta:
         model = Movie
         fields = '__all__'
