@@ -1,0 +1,884 @@
+[
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add actor",
+    "content_type": 7,
+    "codename": "add_actor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change actor",
+    "content_type": 7,
+    "codename": "change_actor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete actor",
+    "content_type": 7,
+    "codename": "delete_actor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view actor",
+    "content_type": 7,
+    "codename": "view_actor"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add director",
+    "content_type": 8,
+    "codename": "add_director"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change director",
+    "content_type": 8,
+    "codename": "change_director"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete director",
+    "content_type": 8,
+    "codename": "delete_director"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view director",
+    "content_type": 8,
+    "codename": "view_director"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add movie",
+    "content_type": 9,
+    "codename": "add_movie"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change movie",
+    "content_type": 9,
+    "codename": "change_movie"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete movie",
+    "content_type": 9,
+    "codename": "delete_movie"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view movie",
+    "content_type": 9,
+    "codename": "view_movie"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$jwBMARUqVM8WXq1WqpU4zy$tptjGoTCVijpchEfOaXXt6AkdoFnxzMdGGgUF8Neock=",
+    "last_login": "2023-08-29T14:19:12.055Z",
+    "is_superuser": true,
+    "username": "admin@mail.com",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@mail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-08-29T13:13:12.373Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "pages",
+    "model": "actor"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "pages",
+    "model": "director"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "pages",
+    "model": "movie"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "3wyn2vkk8tlbsxxz4isi9mheg80qiqvk",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQRf-FtSHAAAMu3fsNhOEhVUOT0q6M_65NutDtPefcFwtxW1vYRlnClNmZSXb63SimR-k7yPfYbzNPc1-Xifiu8IMOfp1zeV4O9--gxdG-dYKKxWcSFgW5mL0tynvSzpgUEbQ0gA6rrrZo8BWkVBmF81o5SiCAvT_aPjb-:1qazYm:p5DBbEmsMiEanXaeEsZ6i4CDuenHHaoJPKkx63xcrO8",
+    "expire_date": "2023-09-12T14:19:12.058Z"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 1,
+  "fields": {
+    "name": "Director 1",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 4,
+    "award_nom": 7,
+    "person_link": "https://person-1.com",
+    "award_link": "https://award-1.com"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 2,
+  "fields": {
+    "name": "Director 2",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 1,
+    "award_nom": 8,
+    "person_link": "https://person-2.com",
+    "award_link": "https://award-2.com"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 3,
+  "fields": {
+    "name": "Director 3",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 8,
+    "award_nom": 3,
+    "person_link": "https://person-3.com",
+    "award_link": "https://award-3.com"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 4,
+  "fields": {
+    "name": "Director 4",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 1,
+    "award_nom": 1,
+    "person_link": "https://person-4.com",
+    "award_link": "https://award-4.com"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 5,
+  "fields": {
+    "name": "Director 5",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 10,
+    "award_nom": 0,
+    "person_link": "https://person-5.com",
+    "award_link": "https://award-5.com"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 6,
+  "fields": {
+    "name": "Director 6",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 8,
+    "award_nom": 5,
+    "person_link": "https://person-6.com",
+    "award_link": "https://award-6.com"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 7,
+  "fields": {
+    "name": "Director 7",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 2,
+    "award_nom": 5,
+    "person_link": "https://person-7.com",
+    "award_link": "https://award-7.com"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 8,
+  "fields": {
+    "name": "Director 8",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 6,
+    "award_nom": 5,
+    "person_link": "https://person-8.com",
+    "award_link": "https://award-8.com"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 9,
+  "fields": {
+    "name": "Director 9",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 4,
+    "award_nom": 9,
+    "person_link": "https://person-9.com",
+    "award_link": "https://award-9.com"
+  }
+},
+{
+  "model": "pages.director",
+  "pk": 10,
+  "fields": {
+    "name": "Director 10",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 7,
+    "award_nom": 7,
+    "person_link": "https://person-10.com",
+    "award_link": "https://award-10.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 1,
+  "fields": {
+    "name": "Actor 1",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 4,
+    "award_nom": 3,
+    "person_link": "https://person-1.com",
+    "award_link": "https://award-1.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 2,
+  "fields": {
+    "name": "Actor 2",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 4,
+    "award_nom": 1,
+    "person_link": "https://person-2.com",
+    "award_link": "https://award-2.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 3,
+  "fields": {
+    "name": "Actor 3",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 2,
+    "award_nom": 4,
+    "person_link": "https://person-3.com",
+    "award_link": "https://award-3.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 4,
+  "fields": {
+    "name": "Actor 4",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 8,
+    "award_nom": 1,
+    "person_link": "https://person-4.com",
+    "award_link": "https://award-4.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 5,
+  "fields": {
+    "name": "Actor 5",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 8,
+    "award_nom": 8,
+    "person_link": "https://person-5.com",
+    "award_link": "https://award-5.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 6,
+  "fields": {
+    "name": "Actor 6",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 3,
+    "award_nom": 9,
+    "person_link": "https://person-6.com",
+    "award_link": "https://award-6.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 7,
+  "fields": {
+    "name": "Actor 7",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 10,
+    "award_nom": 3,
+    "person_link": "https://person-7.com",
+    "award_link": "https://award-7.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 8,
+  "fields": {
+    "name": "Actor 8",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 6,
+    "award_nom": 8,
+    "person_link": "https://person-8.com",
+    "award_link": "https://award-8.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 9,
+  "fields": {
+    "name": "Actor 9",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 3,
+    "award_nom": 7,
+    "person_link": "https://person-9.com",
+    "award_link": "https://award-9.com"
+  }
+},
+{
+  "model": "pages.actor",
+  "pk": 10,
+  "fields": {
+    "name": "Actor 10",
+    "date": "Some Date",
+    "place": "Some Place",
+    "masterpiece": "Some Masterpiece",
+    "award_win": 4,
+    "award_nom": 4,
+    "person_link": "https://person-10.com",
+    "award_link": "https://award-10.com"
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 1,
+  "fields": {
+    "year": 2001,
+    "rank": 1,
+    "title": "Movie 1",
+    "description": "Description for Movie 1",
+    "duration": 161,
+    "genres": "Action, Drama",
+    "rating": 7.6,
+    "metascore": 71,
+    "votes": 4002,
+    "gross_earning_in_mil": 11.0,
+    "director": 1,
+    "actor": 1
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 2,
+  "fields": {
+    "year": 2002,
+    "rank": 2,
+    "title": "Movie 2",
+    "description": "Description for Movie 2",
+    "duration": 151,
+    "genres": "Action, Drama",
+    "rating": 7.7,
+    "metascore": 72,
+    "votes": 5595,
+    "gross_earning_in_mil": 12.0,
+    "director": 2,
+    "actor": 2
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 3,
+  "fields": {
+    "year": 2003,
+    "rank": 3,
+    "title": "Movie 3",
+    "description": "Description for Movie 3",
+    "duration": 128,
+    "genres": "Action, Drama",
+    "rating": 7.8,
+    "metascore": 73,
+    "votes": 7095,
+    "gross_earning_in_mil": 13.0,
+    "director": 3,
+    "actor": 3
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 4,
+  "fields": {
+    "year": 2004,
+    "rank": 4,
+    "title": "Movie 4",
+    "description": "Description for Movie 4",
+    "duration": 122,
+    "genres": "Action, Drama",
+    "rating": 7.9,
+    "metascore": 74,
+    "votes": 3775,
+    "gross_earning_in_mil": 14.0,
+    "director": 4,
+    "actor": 4
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 5,
+  "fields": {
+    "year": 2005,
+    "rank": 5,
+    "title": "Movie 5",
+    "description": "Description for Movie 5",
+    "duration": 101,
+    "genres": "Action, Drama",
+    "rating": 8.0,
+    "metascore": 75,
+    "votes": 8679,
+    "gross_earning_in_mil": 15.0,
+    "director": 5,
+    "actor": 5
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 6,
+  "fields": {
+    "year": 2006,
+    "rank": 6,
+    "title": "Movie 6",
+    "description": "Description for Movie 6",
+    "duration": 162,
+    "genres": "Action, Drama",
+    "rating": 8.1,
+    "metascore": 76,
+    "votes": 4698,
+    "gross_earning_in_mil": 16.0,
+    "director": 6,
+    "actor": 6
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 7,
+  "fields": {
+    "year": 2007,
+    "rank": 7,
+    "title": "Movie 7",
+    "description": "Description for Movie 7",
+    "duration": 112,
+    "genres": "Action, Drama",
+    "rating": 8.2,
+    "metascore": 77,
+    "votes": 3048,
+    "gross_earning_in_mil": 17.0,
+    "director": 7,
+    "actor": 7
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 8,
+  "fields": {
+    "year": 2008,
+    "rank": 8,
+    "title": "Movie 8",
+    "description": "Description for Movie 8",
+    "duration": 108,
+    "genres": "Action, Drama",
+    "rating": 8.3,
+    "metascore": 78,
+    "votes": 9613,
+    "gross_earning_in_mil": 18.0,
+    "director": 8,
+    "actor": 8
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 9,
+  "fields": {
+    "year": 2009,
+    "rank": 9,
+    "title": "Movie 9",
+    "description": "Description for Movie 9",
+    "duration": 136,
+    "genres": "Action, Drama",
+    "rating": 8.4,
+    "metascore": 79,
+    "votes": 5611,
+    "gross_earning_in_mil": 19.0,
+    "director": 9,
+    "actor": 9
+  }
+},
+{
+  "model": "pages.movie",
+  "pk": 10,
+  "fields": {
+    "year": 2010,
+    "rank": 10,
+    "title": "Movie 10",
+    "description": "Description for Movie 10",
+    "duration": 129,
+    "genres": "Action, Drama",
+    "rating": 8.5,
+    "metascore": 80,
+    "votes": 8360,
+    "gross_earning_in_mil": 20.0,
+    "director": 10,
+    "actor": 10
+  }
+}
+]

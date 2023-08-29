@@ -25,7 +25,7 @@ SECRET_KEY = '_-g8e3m(_@&-3ctzvu$1b+yf1ncn==vhp+2yo6h@i#a^id2j24'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'pages',
 ]
 
@@ -76,8 +77,8 @@ WSGI_APPLICATION = 'movieDB.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': os.environ.get("DB_ENGINE", "django.db.backends.sqlite3"),
+        'NAME': os.environ.get("DB_NAME", os.path.join(BASE_DIR, 'db.sqlite3')),
     }
 }
 
@@ -122,3 +123,17 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "verbose": {"format": "[%(asctime)s] [%(levelname)s] %(message)s", "datefmt": "%d/%b/%Y %H:%M:%S"},
+        "color_formatter": {"()": "pages.util.logging.Formatter"},  # colored output
+    },
+    "handlers": {"console_handler": {"class": "logging.StreamHandler", "formatter": "color_formatter"}},
+    "loggers": {
+        "": {"level": "DEBUG", "handlers": ["console_handler"], "propagate": False, "formatter": "color_formatter"},
+        "API": {"level": "DEBUG", "handlers": ["console_handler"], "propagate": False, "formatter": "color_formatter"},
+    },
+}
