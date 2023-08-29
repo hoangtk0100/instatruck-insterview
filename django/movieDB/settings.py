@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'pages',
+    'util',
 ]
 
 MIDDLEWARE = [
@@ -129,7 +130,7 @@ LOGGING = {
     "disable_existing_loggers": False,
     "formatters": {
         "verbose": {"format": "[%(asctime)s] [%(levelname)s] %(message)s", "datefmt": "%d/%b/%Y %H:%M:%S"},
-        "color_formatter": {"()": "pages.util.logging.Formatter"},  # colored output
+        "color_formatter": {"()": "util.logging.Formatter"},  # colored output
     },
     "handlers": {"console_handler": {"class": "logging.StreamHandler", "formatter": "color_formatter"}},
     "loggers": {

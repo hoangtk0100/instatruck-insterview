@@ -1,6 +1,6 @@
 from .models import Movie, Actor, Director
-from .util.exceptions import NotFoundException
-from .util.messages import ACTOR_NOT_FOUND, DIRECTOR_NOT_FOUND
+from util.exceptions import NotFoundException
+from util.messages import ACTOR_NOT_FOUND, DIRECTOR_NOT_FOUND
 
 class MovieRepo:
     @staticmethod
